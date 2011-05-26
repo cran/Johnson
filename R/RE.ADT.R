@@ -21,7 +21,7 @@ ifelse((AD2a>=0.00 & AD2a<0.200),(p<-1-exp(-13.436+101.14*AD2a-223.73*AD2a^2)),
 (ifelse((AD2a>=0.340 & AD2a<0.600),(p<-exp(0.9177-4.279*AD2a-1.38*AD2a^2)),
 ((p<-exp(1.2937-5.709*AD2a+0.0186*AD2a^2))))))))
 
-outList = list("Box-Cox tranformation", p= p)
+outList = list("Anderson-Darling Test", p= p)
     invisible(outList)
 
 }

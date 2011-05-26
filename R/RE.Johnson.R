@@ -40,6 +40,11 @@ xsb.adtest=matrix(0,1,101)
 xsl.adtest=matrix(0,1,101)
 xsu.adtest=matrix(0,1,101)
 
+f.gamma<-0
+f.lambda<-0
+f.epsilon<-0
+f.eta<-0
+
 #################################
 
 for(i in 1:101) {
@@ -97,10 +102,13 @@ if(xsl.valida[1,i]==0) xsl.adtest[1,i]<-(RE.ADT(xsl[,i])$p)
 if(xsu.valida[1,i]==0) xsu.adtest[1,i]<-(RE.ADT(xsu[,i])$p)
 }
 #####
-ifelse((max(xsb.adtest)>max(xsl.adtest)& max(xsb.adtest)>max(xsu.adtest)),{p<-max(xsb.adtest);fun<-"SB";transformed<-xsb[,max.col(xsb.adtest)]} ,ifelse(max(xsl.adtest)>max(xsu.adtest),{p<-max(xsl.adtest);fun<-"SL";transformed<-xsl[,max.col(xsl.adtest)]},{p<-max(xsu.adtest); fun<-"SU";transformed<-xsu[,max.col(xsu.adtest)]}))
+ifelse((max(xsb.adtest)>max(xsl.adtest)& max(xsb.adtest)>max(xsu.adtest)),{p<-max(xsb.adtest);fun<-"SB";transformed<-xsb[,max.col(xsb.adtest)];f.gamma<-b.gamma[max.col(xsb.adtest)];f.lambda<-b.lambda[max.col(xsb.adtest)];f.epsilon<-b.epsilon[max.col(xsb.adtest)];f.eta<-b.eta[max.col(xsb.adtest)]} ,ifelse(max(xsl.adtest)>max(xsu.adtest),{p<-max(xsl.adtest);fun<-"SL";transformed<-xsl[,max.col(xsl.adtest)];f.gamma<-l.gamma[max.col(xsl.adtest)];f.lambda<-l.lambda[max.col(xsl.adtest)];f.epsilon<-l.epsilon[max.col(xsl.adtest)];f.eta<-l.eta[max.col(xsl.adtest)]},{p<-max(xsu.adtest); fun<-"SU";transformed<-xsu[,max.col(xsu.adtest)];f.gamma<-u.gamma[max.col(xsu.adtest)];f.lambda<-u.lambda[max.col(xsu.adtest)];f.epsilon<-u.epsilon[max.col(xsu.adtest)];f.eta<-u.eta[max.col(xsu.adtest)]}))
 
-outList = list("Johnson Transformation","function"=fun,p=p,transformed=transformed)
+outList = list("Johnson Transformation","function"=fun,p=p,transformed=transformed,f.gamma=f.gamma,f.lambda=f.lambda,f.epsilon=f.epsilon,f.eta=f.eta)
     invisible(outList)
 
 }
+
+
+
 
