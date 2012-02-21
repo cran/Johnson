@@ -1,13 +1,13 @@
-RE.ADT <-
-function(x){
+RE.ADT <- function(x){
 alpha <- 0.05
 n <- length(x)
+s <- sd(x)
 x <- sort(x)
 
 x<-matrix(x,nrow=n)
 fx<-matrix(x,nrow=n)
 
-fx<-pnorm((x-mean(x))/sd(x))
+fx<-pnorm((x-mean(x))/s)
 
 i<-1:n
 

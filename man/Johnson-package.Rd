@@ -4,7 +4,7 @@
 \docType{package}
 \title{Johnson transformation}
 \description{Johnson transform to normality using the Z family of distributions. Performs the Johnson Transformation based on the method of the percentiles.
-Include the Anderson-Darling Test
+Includes the Anderson-Darling Test
 }
 \details{
 The values of the Johnson Transformation Function can be obtained
