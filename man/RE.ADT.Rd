@@ -1,9 +1,9 @@
 \name{RE.ADT}
 \alias{RE.ADT}
 
-\title{Anderson-Darling Test}
+\title{Anderson-Darling test}
 
-\description{RE.ADT performs the Anderson-Darling Test according to Trujillo-Ortiz(2007)}
+\description{RE.ADT performs the Anderson-Darling test according to Trujillo-Ortiz(2007)}
 \usage{
 RE.ADT(x)
 }
@@ -36,12 +36,12 @@ The function RE.ADT use the traditional algorithm while ADGofTest package is bas
 }
 \examples{
 # performing the AD test for a random sample
-x<-rnorm(100,10,2)
-y<-RE.ADT(x);print(y)
+x <- rnorm(100,10,2)
+y <- RE.ADT(x); print(y)
 
 #working with the p-value
-x<-runif(100)
-y<-RE.ADT(x)$p;print(y)
+x <- runif(100)
+y <- RE.ADT(x) $p; print(y)
 
 }
 

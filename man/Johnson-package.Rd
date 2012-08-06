@@ -3,16 +3,16 @@
 \alias{Johnson}
 \docType{package}
 \title{Johnson transformation}
-\description{Johnson transform to normality using the Z family of distributions. Performs the Johnson Transformation based on the method of the percentiles.
-Includes the Anderson-Darling Test
+\description{Johnson transforms to normality using the Z family of distributions. It performs the Johnson Transformation based on the method of the percentiles.
+It includes the Anderson-Darling Test.
 }
 \details{
 The values of the Johnson Transformation Function can be obtained
 \tabular{ll}{
 Package: \tab Johnson\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-04-25\cr
+Version: \tab 1.3\cr
+Date: \tab 2012-08-06\cr
 License: \tab What license is it under?\cr
 LazyLoad: \tab yes\cr
 }
@@ -47,14 +47,14 @@ URL: http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=14
 }
 \examples{
 # transforming to normality a random sample with beta distribution
-x<-rbeta(30,2,3)
-y<-RE.Johnson(x);print(y)
+x <- rbeta(30,2,3)
+y <- RE.Johnson(x); print(y)
 
 # working with the transformed variable
-x<-runif(100)
-y<-RE.Johnson(x)$transformed;print(y)
+x <- runif(100)
+y <- RE.Johnson(x) $ transformed; print(y)
 
 # working with the p-values
-x<-rgamma(100,2,1)
-y<-RE.Johnson(x)$p;print(y)
+x <- rgamma(100,2,1)
+y <- RE.Johnson(x)$p; print(y)
 }
